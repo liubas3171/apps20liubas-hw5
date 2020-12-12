@@ -24,7 +24,9 @@ public class AsIntStream implements IntStream {
     public Integer max() {
         checkIfEmpty();
         return reduce(Integer.MIN_VALUE, (x, y) -> {
-            if (x > y) return x;
+            if (x > y) {
+                return x;
+            }
             return y;
         });
     }
@@ -33,7 +35,9 @@ public class AsIntStream implements IntStream {
     public Integer min() {
         checkIfEmpty();
         return reduce(Integer.MAX_VALUE, (x, y) -> {
-            if (x < y) return x;
+            if (x < y) {
+                return x;
+            }
             return y;
         });
     }
